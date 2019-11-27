@@ -41,3 +41,6 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 Route::resource('users','UsersController',['only' => ['show','edit','update']]);
 
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+
+//根据分类显示话题列表资源路由
+Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
