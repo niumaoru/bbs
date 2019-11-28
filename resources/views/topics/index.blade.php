@@ -12,8 +12,6 @@
         </div>
       @endif
 
-      <div class="card ">
-
         <div class="card ">
           <div class="card-header bg-transparent">
             <ul class="nav nav-pills">
