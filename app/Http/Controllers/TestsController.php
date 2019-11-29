@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 class TestsController extends Controller
 {
     public function test(){
-        $text = '<p>Test paragraph.</p><!-- Comment --> <a href="#fragment">Other text</a>';
-        echo strip_tags($text);
-        echo "\n";
+        $query = http_build_query([
+            "q"     =>  '苹果',
+            "from"  => "zh",
+            "to"    => "en",
+            "appid" => '20190529000303199',
+            "salt"  => time(),
+            "sign"  => 'kiUwbzR5YkvwukPgIl3Z',
+        ]);
 
-// 允许 <p> 和 <a>
-        echo strip_tags($text, '<p><a>');
+        dd($query);
     }
 }
