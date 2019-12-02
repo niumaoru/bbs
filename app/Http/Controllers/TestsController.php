@@ -8,7 +8,7 @@ class TestsController extends Controller
 {
     public function test(){
         $query = http_build_query([
-            "q"     =>  '苹果',
+            "q"     =>  'apple',
             "from"  => "zh",
             "to"    => "en",
             "appid" => '20190529000303199',

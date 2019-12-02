@@ -40,10 +40,13 @@ Route::post('email/resend', 'Auth\VerificationController@resend')->name('verific
 //用户资源路由
 Route::resource('users','UsersController',['only' => ['show','edit','update']]);
 
-Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('topics', 'TopicsController', ['only' => ['index', 'create', 'store', 'update', 'edit', 'destroy']]);
 
 //根据分类显示话题列表资源路由
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 
 //话题发布页面图片上传路由
 Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
+
+//显示话题页面友好URL
+Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
